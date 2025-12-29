@@ -1,0 +1,15 @@
+# Core Dagster packages
+dagster==1.9.6
+dagster-webserver==1.9.6
+dagster-postgres==0.25.6
+
+# Common integrations (add more as needed)
+dagster-docker==0.25.6
+pandas==2.2.3
+requests==2.32.3
+
+# Optional: Add these for specific integrations
+# dagster-dbt
+# dagster-snowflake
+# dagster-aws
+# dagster-gcp

@@ -1,0 +1,114 @@
+version: "3.8"
+
+services:
+  # PostgreSQL database for Dagster metadata
+  dagster_postgresql:
+    image: postgres:15
+    container_name: dagster_postgresql
+    environment:
+      POSTGRES_USER: dagster
+      POSTGRES_PASSWORD: dagster_password
+      POSTGRES_DB: dagster
+    volumes:
+      - dagster_postgres_data:/var/lib/postgresql/data
+    networks:
+      - dagster_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dagster -d dagster"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Dagster webserver (UI)
+  dagster_webserver:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: dagster_webserver
+    entrypoint:
+      - dagster-webserver
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "3000"
+      - -w
+      - workspace.yaml
+    ports:
+      - "3000:3000"
+    environment:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+      DAGSTER_POSTGRES_USER: dagster
+      DAGSTER_POSTGRES_PASSWORD: dagster_password
+      DAGSTER_POSTGRES_DB: dagster
+      DAGSTER_POSTGRES_HOST: dagster_postgresql
+    volumes:
+      - ./dagster_project:/opt/dagster/app/dagster_project
+      #- ./workspace.yaml:/opt/dagster/app/workspace.yaml
+    networks:
+      - dagster_network
+    depends_on:
+      dagster_postgresql:
+        condition: service_healthy
+
+  # Dagster daemon (schedules, sensors, run queue)
+  dagster_daemon:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: dagster_daemon
+    entrypoint:
+      - dagster-daemon
+      - run
+    environment:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+      DAGSTER_POSTGRES_USER: dagster
+      DAGSTER_POSTGRES_PASSWORD: dagster_password
+      DAGSTER_POSTGRES_DB: dagster
+      DAGSTER_POSTGRES_HOST: dagster_postgresql
+    volumes:
+      - ./dagster_project:/opt/dagster/app/dagster_project
+     # - ./workspace.yaml:/opt/dagster/app/workspace.yaml
+    networks:
+      - dagster_network
+    depends_on:
+      dagster_postgresql:
+        condition: service_healthy
+
+  # Code location server (runs your actual pipeline code)
+  dagster_code:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: dagster_code
+    entrypoint:
+      - dagster
+      - api
+      - grpc
+      - -h
+      - "0.0.0.0"
+      - -p
+      - "4000"
+      - -m
+      - dagster_project
+    environment:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+      DAGSTER_POSTGRES_USER: dagster
+      DAGSTER_POSTGRES_PASSWORD: dagster_password
+      DAGSTER_POSTGRES_DB: dagster
+      DAGSTER_POSTGRES_HOST: dagster_postgresql
+      DAGSTER_CURRENT_IMAGE: dagster_code
+    volumes:
+      - ./dagster_project:/opt/dagster/app/dagster_project
+      - ./data:/opt/dagster/app/data
+    networks:
+      - dagster_network
+    depends_on:
+      dagster_postgresql:
+        condition: service_healthy
+
+volumes:
+  dagster_postgres_data:
+
+networks:
+  dagster_network:
+    driver: bridge

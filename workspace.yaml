@@ -1,0 +1,8 @@
+# Workspace configuration - defines where Dagster finds your code
+
+load_from:
+  # Load from a gRPC server (the dagster_code container)
+  - grpc_server:
+      host: dagster_code
+      port: 4000
+      location_name: "dagster_project"

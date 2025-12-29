@@ -1,0 +1,101 @@
+id,superhero_name,hero_identity,city
+1,Spider-Man,Peter Parker,New York
+2,Batman,Bruce Wayne,Gotham
+3,Superman,Clark Kent,Metropolis
+4,Wonder Woman,Diana Prince,Washington DC
+5,Iron Man,Tony Stark,New York
+6,Captain America,Steve Rogers,New York
+7,Thor,Thor Odinson,Asgard
+8,Hulk,Bruce Banner,New York
+9,Black Widow,Natasha Romanoff,New York
+10,Hawkeye,Clint Barton,New York
+11,Flash,Barry Allen,Central City
+12,Aquaman,Arthur Curry,Atlantis
+13,Green Lantern,Hal Jordan,Coast City
+14,Cyborg,Victor Stone,Detroit
+15,Robin,Dick Grayson,Gotham
+16,Batgirl,Barbara Gordon,Gotham
+17,Nightwing,Dick Grayson,Bludhaven
+18,Black Panther,T'Challa,Wakanda
+19,Doctor Strange,Stephen Strange,New York
+20,Scarlet Witch,Wanda Maximoff,Sokovia
+21,Vision,Vision,New York
+22,Ant-Man,Scott Lang,San Francisco
+23,Wasp,Hope Van Dyne,San Francisco
+24,Falcon,Sam Wilson,New York
+25,Winter Soldier,Bucky Barnes,New York
+26,War Machine,James Rhodes,Los Angeles
+27,Star-Lord,Peter Quill,Space
+28,Gamora,Gamora,Space
+29,Drax,Drax,Space
+30,Rocket,Rocket Raccoon,Space
+31,Groot,Groot,Space
+32,Supergirl,Kara Zor-El,National City
+33,Green Arrow,Oliver Queen,Star City
+34,Black Canary,Dinah Lance,Star City
+35,Martian Manhunter,J'onn J'onzz,Denver
+36,Shazam,Billy Batson,Philadelphia
+37,Blue Beetle,Jaime Reyes,El Paso
+38,Zatanna,Zatanna Zatara,San Francisco
+39,Constantine,John Constantine,London
+40,Hellboy,Hellboy,New York
+41,Spawn,Al Simmons,New York
+42,Invincible,Mark Grayson,Chicago
+43,Omni-Man,Nolan Grayson,Chicago
+44,Homelander,John,New York
+45,Starlight,Annie January,New York
+46,A-Train,A-Train,New York
+47,The Deep,Kevin,New York
+48,Queen Maeve,Maggie Shaw,New York
+49,Daredevil,Matt Murdock,New York
+50,Jessica Jones,Jessica Jones,New York
+51,Luke Cage,Luke Cage,New York
+52,Iron Fist,Danny Rand,New York
+53,Punisher,Frank Castle,New York
+54,Moon Knight,Marc Spector,New York
+55,She-Hulk,Jennifer Walters,Los Angeles
+56,Ms Marvel,Kamala Khan,Jersey City
+57,America Chavez,America Chavez,New York
+58,Kate Bishop,Kate Bishop,New York
+59,Echo,Maya Lopez,New York
+60,Blade,Eric Brooks,New York
+61,Ghost Rider,Johnny Blaze,Los Angeles
+62,Deadpool,Wade Wilson,New York
+63,Cable,Nathan Summers,New York
+64,Domino,Neena Thurman,New York
+65,Wolverine,Logan,Westchester
+66,Storm,Ororo Munroe,Westchester
+67,Cyclops,Scott Summers,Westchester
+68,Jean Grey,Jean Grey,Westchester
+69,Rogue,Anna Marie,Westchester
+70,Gambit,Remy LeBeau,New Orleans
+71,Nightcrawler,Kurt Wagner,Westchester
+72,Beast,Hank McCoy,Westchester
+73,Iceman,Bobby Drake,Westchester
+74,Colossus,Piotr Rasputin,Westchester
+75,Kitty Pryde,Kitty Pryde,Westchester
+76,Jubilee,Jubilation Lee,Westchester
+77,Psylocke,Betsy Braddock,London
+78,Angel,Warren Worthington,Westchester
+79,Professor X,Charles Xavier,Westchester
+80,Magneto,Erik Lehnsherr,Genosha
+81,Mystique,Raven Darkholme,Unknown
+82,Quicksilver,Pietro Maximoff,Sokovia
+83,Silver Surfer,Norrin Radd,Space
+84,Fantastic Four Mr Fantastic,Reed Richards,New York
+85,Invisible Woman,Sue Storm,New York
+86,Human Torch,Johnny Storm,New York
+87,The Thing,Ben Grimm,New York
+88,Namor,Namor McKenzie,Atlantis
+89,Captain Marvel,Carol Danvers,Boston
+90,Nova,Richard Rider,New York
+91,Quasar,Wendell Vaughn,New York
+92,Adam Warlock,Adam Warlock,Space
+93,Mantis,Mantis,Space
+94,Nebula,Nebula,Space
+95,Yondu,Yondu Udonta,Space
+96,Korg,Korg,Asgard
+97,Valkyrie,Brunnhilde,Asgard
+98,Loki,Loki Laufeyson,Asgard
+99,Shang-Chi,Shang-Chi,San Francisco
+100,Eternals Sersi,Sersi,London

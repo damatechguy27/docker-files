@@ -1,0 +1,45 @@
+# Dagster instance configuration
+
+# Storage for run history, event logs, etc.
+storage:
+  postgres:
+    postgres_db:
+      username:
+        env: DAGSTER_POSTGRES_USER
+      password:
+        env: DAGSTER_POSTGRES_PASSWORD
+      hostname:
+        env: DAGSTER_POSTGRES_HOST
+      db_name:
+        env: DAGSTER_POSTGRES_DB
+      port: 5432
+
+# Run launcher - how Dagster launches pipeline runs
+run_launcher:
+  module: dagster._core.launcher
+  class: DefaultRunLauncher
+
+# Run coordinator - manages the run queue
+run_coordinator:
+  module: dagster._core.run_coordinator
+  class: QueuedRunCoordinator
+  config:
+    max_concurrent_runs: 5
+
+# Compute log storage
+compute_logs:
+  module: dagster._core.storage.local_compute_log_manager
+  class: LocalComputeLogManager
+  config:
+    base_dir: /opt/dagster/app/data/compute_logs
+
+# Local artifact storage
+local_artifact_storage:
+  module: dagster._core.storage.root
+  class: LocalArtifactStorage
+  config:
+    base_dir: /opt/dagster/app/data/artifacts
+
+# Telemetry (optional - set to false to disable)
+telemetry:
+  enabled: false
