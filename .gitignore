@@ -1,0 +1,43 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+.eggs/
+*.egg-info/
+*.egg
+
+# Dagster
+.dagster/
+storage/
+logs/
+
+# Data files (keep structure, ignore contents)
+data/*
+!data/.gitkeep
+!data/incoming/
+data/incoming/*
+!data/incoming/.gitkeep
+
+# Docker
+.docker/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+./data/compute_logs/*
